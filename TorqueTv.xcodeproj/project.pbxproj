@@ -1,0 +1,318 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CE70923615B495AE00C04760 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE70923515B495AE00C04760 /* UIKit.framework */; };
+		CE70923815B495AE00C04760 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE70923715B495AE00C04760 /* Foundation.framework */; };
+		CE70923A15B495AE00C04760 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE70923915B495AE00C04760 /* CoreGraphics.framework */; };
+		CE70924015B495AE00C04760 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE70923E15B495AE00C04760 /* InfoPlist.strings */; };
+		CE70924215B495AE00C04760 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE70924115B495AE00C04760 /* main.m */; };
+		CE70924615B495AE00C04760 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE70924515B495AE00C04760 /* AppDelegate.m */; };
+		CE70924915B495AE00C04760 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE70924715B495AE00C04760 /* MainStoryboard_iPhone.storyboard */; };
+		CE70924C15B495AE00C04760 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE70924A15B495AE00C04760 /* MainStoryboard_iPad.storyboard */; };
+		CE70924F15B495AF00C04760 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE70924E15B495AF00C04760 /* FirstViewController.m */; };
+		CE70925115B495AF00C04760 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = CE70925015B495AF00C04760 /* first.png */; };
+		CE70925315B495AF00C04760 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE70925215B495AF00C04760 /* first@2x.png */; };
+		CE70925615B495AF00C04760 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE70925515B495AF00C04760 /* SecondViewController.m */; };
+		CE70925815B495AF00C04760 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = CE70925715B495AF00C04760 /* second.png */; };
+		CE70925A15B495AF00C04760 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE70925915B495AF00C04760 /* second@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CE70923115B495AE00C04760 /* TorqueTv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TorqueTv.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE70923515B495AE00C04760 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		CE70923715B495AE00C04760 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CE70923915B495AE00C04760 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CE70923D15B495AE00C04760 /* TorqueTv-Info.plist */ = {isa = PBXFileReference; path = "TorqueTv-Info.plist"; sourceTree = "<group>"; };
+		CE70923F15B495AE00C04760 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CE70924115B495AE00C04760 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CE70924315B495AE00C04760 /* TorqueTv-Prefix.pch */ = {isa = PBXFileReference; path = "TorqueTv-Prefix.pch"; sourceTree = "<group>"; };
+		CE70924415B495AE00C04760 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		CE70924515B495AE00C04760 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CE70924815B495AE00C04760 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		CE70924B15B495AE00C04760 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		CE70924D15B495AE00C04760 /* FirstViewController.h */ = {isa = PBXFileReference; path = FirstViewController.h; sourceTree = "<group>"; };
+		CE70924E15B495AF00C04760 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		CE70925015B495AF00C04760 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
+		CE70925215B495AF00C04760 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
+		CE70925415B495AF00C04760 /* SecondViewController.h */ = {isa = PBXFileReference; path = SecondViewController.h; sourceTree = "<group>"; };
+		CE70925515B495AF00C04760 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		CE70925715B495AF00C04760 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
+		CE70925915B495AF00C04760 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CE70922E15B495AE00C04760 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE70923615B495AE00C04760 /* UIKit.framework in Frameworks */,
+				CE70923815B495AE00C04760 /* Foundation.framework in Frameworks */,
+				CE70923A15B495AE00C04760 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CE70922615B495AE00C04760 = {
+			isa = PBXGroup;
+			children = (
+				CE70923B15B495AE00C04760 /* TorqueTv */,
+				CE70923415B495AE00C04760 /* Frameworks */,
+				CE70923215B495AE00C04760 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CE70923215B495AE00C04760 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CE70923115B495AE00C04760 /* TorqueTv.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CE70923415B495AE00C04760 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE70923515B495AE00C04760 /* UIKit.framework */,
+				CE70923715B495AE00C04760 /* Foundation.framework */,
+				CE70923915B495AE00C04760 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE70923B15B495AE00C04760 /* TorqueTv */ = {
+			isa = PBXGroup;
+			children = (
+				CE70924415B495AE00C04760 /* AppDelegate.h */,
+				CE70924515B495AE00C04760 /* AppDelegate.m */,
+				CE70924715B495AE00C04760 /* MainStoryboard_iPhone.storyboard */,
+				CE70924A15B495AE00C04760 /* MainStoryboard_iPad.storyboard */,
+				CE70924D15B495AE00C04760 /* FirstViewController.h */,
+				CE70924E15B495AF00C04760 /* FirstViewController.m */,
+				CE70925015B495AF00C04760 /* first.png */,
+				CE70925215B495AF00C04760 /* first@2x.png */,
+				CE70925415B495AF00C04760 /* SecondViewController.h */,
+				CE70925515B495AF00C04760 /* SecondViewController.m */,
+				CE70925715B495AF00C04760 /* second.png */,
+				CE70925915B495AF00C04760 /* second@2x.png */,
+				CE70923C15B495AE00C04760 /* Supporting Files */,
+			);
+			path = TorqueTv;
+			sourceTree = "<group>";
+		};
+		CE70923C15B495AE00C04760 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CE70923D15B495AE00C04760 /* TorqueTv-Info.plist */,
+				CE70923E15B495AE00C04760 /* InfoPlist.strings */,
+				CE70924115B495AE00C04760 /* main.m */,
+				CE70924315B495AE00C04760 /* TorqueTv-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CE70923015B495AE00C04760 /* TorqueTv */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE70925D15B495AF00C04760 /* Build configuration list for PBXNativeTarget "TorqueTv" */;
+			buildPhases = (
+				CE70922D15B495AE00C04760 /* Sources */,
+				CE70922E15B495AE00C04760 /* Frameworks */,
+				CE70922F15B495AE00C04760 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TorqueTv;
+			productName = TorqueTv;
+			productReference = CE70923115B495AE00C04760 /* TorqueTv.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CE70922815B495AE00C04760 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = theroyalwe.net;
+			};
+			buildConfigurationList = CE70922B15B495AE00C04760 /* Build configuration list for PBXProject "TorqueTv" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CE70922615B495AE00C04760;
+			productRefGroup = CE70923215B495AE00C04760 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CE70923015B495AE00C04760 /* TorqueTv */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CE70922F15B495AE00C04760 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE70924015B495AE00C04760 /* InfoPlist.strings in Resources */,
+				CE70924915B495AE00C04760 /* MainStoryboard_iPhone.storyboard in Resources */,
+				CE70924C15B495AE00C04760 /* MainStoryboard_iPad.storyboard in Resources */,
+				CE70925115B495AF00C04760 /* first.png in Resources */,
+				CE70925315B495AF00C04760 /* first@2x.png in Resources */,
+				CE70925815B495AF00C04760 /* second.png in Resources */,
+				CE70925A15B495AF00C04760 /* second@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CE70922D15B495AE00C04760 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE70924215B495AE00C04760 /* main.m in Sources */,
+				CE70924615B495AE00C04760 /* AppDelegate.m in Sources */,
+				CE70924F15B495AF00C04760 /* FirstViewController.m in Sources */,
+				CE70925615B495AF00C04760 /* SecondViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CE70923E15B495AE00C04760 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE70923F15B495AE00C04760 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		CE70924715B495AE00C04760 /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE70924815B495AE00C04760 /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		CE70924A15B495AE00C04760 /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE70924B15B495AE00C04760 /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CE70925B15B495AF00C04760 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CE70925C15B495AF00C04760 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CE70925E15B495AF00C04760 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TorqueTv/TorqueTv-Prefix.pch";
+				INFOPLIST_FILE = "TorqueTv/TorqueTv-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		CE70925F15B495AF00C04760 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TorqueTv/TorqueTv-Prefix.pch";
+				INFOPLIST_FILE = "TorqueTv/TorqueTv-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CE70922B15B495AE00C04760 /* Build configuration list for PBXProject "TorqueTv" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE70925B15B495AF00C04760 /* Debug */,
+				CE70925C15B495AF00C04760 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE70925D15B495AF00C04760 /* Build configuration list for PBXNativeTarget "TorqueTv" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE70925E15B495AF00C04760 /* Debug */,
+				CE70925F15B495AF00C04760 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CE70922815B495AE00C04760 /* Project object */;
+}
