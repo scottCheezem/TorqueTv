@@ -28,21 +28,27 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     
-
-    if(!showdetailsId){
-        NSString* urlString = @"http://theroyalwe.net/~user/torqueTv/xbmcConnect.php";
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlString]];
-            [self performSelectorOnMainThread:@selector(fetchedShowData:) withObject:data waitUntilDone:YES];
-        }) ;
-    }else{
-        NSString* urlString = [NSString stringWithFormat:@"http://theroyalwe.net/~user/torqueTv/xbmcConnect.php?showid=%@", showdetailsId];    
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlString]];
-            [self performSelectorOnMainThread:@selector(fetchedEpisodes:) withObject:data waitUntilDone:YES];
-        }) ;
+    NSString* urlString = @"http://theroyalwe.net/~user/torqueTv/xbmcConnect.php";
     
+
+
+        NSURL *url = [[NSURL alloc]initWithString:urlString];
+
+        NSMutableURLRequest *postRequest = [[NSMutableURLRequest alloc]initWithURL:url];
+    if(showdetailsId){
+        [postRequest setHTTPMethod:@"POST"];
+        NSString *postString = [[NSString alloc]initWithFormat:@"showid=%@", showdetailsId];
+        [postRequest setValue:[NSString stringWithFormat:@"%d", postString.length] forHTTPHeaderField:@"Content-length"];
+        [postRequest setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
+        postRequest.timeoutInterval = 10;
+
     }
+
+        [[NSURLConnection alloc]initWithRequest:postRequest delegate:self];
+
+        
+        
+    
     
 }
 
@@ -52,6 +58,7 @@
 
     [super viewDidLoad];
     shows = [[NSMutableArray alloc]init];
+    recievedData = [[NSMutableData alloc]init];
     //showdetailsId = [[NSString alloc]init];
     
     
@@ -101,6 +108,8 @@
 
         // Configure the cell...
         cell.textLabel.text = [[shows objectAtIndex:indexPath.row]showTitle];
+        //cell.detailTextLabel.text = [[shows objectAtIndex:indexPath.row]showId];
+        
         return cell;
     }else{
         static NSString *CellIdentifier = @"epCell";
@@ -108,7 +117,7 @@
         
         // Configure the cell...
         cell.textLabel.text = [[shows objectAtIndex:indexPath.row]epTitle];        
-        
+        cell.detailTextLabel.text = [[shows objectAtIndex:indexPath.row]epCode];
         return cell;
         
     }
@@ -183,6 +192,20 @@
 
 
 
+-(void)connection:(NSURLConnection*)connection didReceiveData:(NSData *)data{
+    //NSLog(@"Data - %@", data);
+    [recievedData appendData:data];
+    if(showdetailsId){
+        
+        [self fetchedEpisodes:recievedData];
+    }else{
+        [self fetchedShowData:recievedData];
+    }
+}
+
+
+
+
 -(void)fetchedShowData:(NSData*)responseData{
     
     NSError *err;
@@ -210,12 +233,14 @@
     
     NSError *err;
     NSDictionary* jsonResponse = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&err];
+    NSLog(@"json - %@", jsonResponse);
     NSArray *episodeJson = [jsonResponse objectForKey:@"episodes"];
     
     for(NSDictionary *epDict in episodeJson){
         Episode *episode = [[Episode alloc]init];
         episode.epTitle = [epDict valueForKey:@"epTitle"];
         episode.path = [epDict valueForKey:@"path"];
+        episode.epCode =[epDict valueForKey:@"epCode"];
         [shows addObject:episode];
     }
     [self.tableView reloadData];

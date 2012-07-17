@@ -13,6 +13,8 @@
 
 @interface browserView : UITableViewController<UITableViewDelegate>{
     NSMutableArray* shows;
+    NSMutableData *recievedData;
+    
 }
 @property(nonatomic, retain)NSString* showdetailsId;
 @end

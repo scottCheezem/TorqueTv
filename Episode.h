@@ -11,4 +11,5 @@
 @interface Episode : NSObject
 @property(nonatomic, retain)NSString* epTitle;
 @property(nonatomic, retain)NSString* path;
+@property(nonatomic, retain)NSString* epCode;
 @end
