@@ -15,6 +15,7 @@
 @end
 
 @implementation browserView
+@synthesize showdetailsId;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -27,19 +28,31 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://user.theroyalwe.net/torqueTv/xbmcConnect.php"]];
-        [self performSelectorOnMainThread:@selector(fetchedShowData:) withObject:data waitUntilDone:YES];
-    }) ;
+
+    if(!showdetailsId){
+        NSString* urlString = @"http://theroyalwe.net/~user/torqueTv/xbmcConnect.php";
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlString]];
+            [self performSelectorOnMainThread:@selector(fetchedShowData:) withObject:data waitUntilDone:YES];
+        }) ;
+    }else{
+        NSString* urlString = [NSString stringWithFormat:@"http://theroyalwe.net/~user/torqueTv/xbmcConnect.php?showid=%@", showdetailsId];    
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlString]];
+            [self performSelectorOnMainThread:@selector(fetchedEpisodes:) withObject:data waitUntilDone:YES];
+        }) ;
+    
+    }
     
 }
 
 - (void)viewDidLoad
 {
     
-    shows = [[NSMutableArray alloc]init];
+
     [super viewDidLoad];
-    
+    shows = [[NSMutableArray alloc]init];
+    //showdetailsId = [[NSString alloc]init];
     
     
     
@@ -81,13 +94,28 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"showCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    // Configure the cell...
-    cell.textLabel.text = [[shows objectAtIndex:indexPath.row]showTitle];
-    
+    UITableViewCell *cell = [[UITableViewCell alloc]init];
+    if(!showdetailsId){
+        static NSString *CellIdentifier = @"showCell";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+
+        // Configure the cell...
+        cell.textLabel.text = [[shows objectAtIndex:indexPath.row]showTitle];
+        return cell;
+    }else{
+        static NSString *CellIdentifier = @"epCell";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        
+        // Configure the cell...
+        cell.textLabel.text = [[shows objectAtIndex:indexPath.row]epTitle];        
+        
+        return cell;
+        
+    }
     return cell;
+    
+    
+
 }
 
 /*
@@ -142,6 +170,18 @@
      */
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    
+    if(!showdetailsId){
+        browserView *eppBrowser = [segue destinationViewController];
+        NSIndexPath *selected = [self.tableView indexPathForSelectedRow];
+        eppBrowser.showdetailsId = [[shows objectAtIndex:selected.row]showId];
+    }
+    
+}
+
+
 
 -(void)fetchedShowData:(NSData*)responseData{
     
@@ -166,6 +206,21 @@
     
 }
 
-
+-(void)fetchedEpisodes:(NSData*)responseData{
+    
+    NSError *err;
+    NSDictionary* jsonResponse = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&err];
+    NSArray *episodeJson = [jsonResponse objectForKey:@"episodes"];
+    
+    for(NSDictionary *epDict in episodeJson){
+        Episode *episode = [[Episode alloc]init];
+        episode.epTitle = [epDict valueForKey:@"epTitle"];
+        episode.path = [epDict valueForKey:@"path"];
+        [shows addObject:episode];
+    }
+    [self.tableView reloadData];
+    
+    
+}
 
 @end
