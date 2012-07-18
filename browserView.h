@@ -6,8 +6,14 @@
 //  Copyright (c) 2012 theroyalwe.net. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#define REMOTE_HOST @"http://theroyalwe.net/~user"
+#define LOCAL_HOST @"http://ubunbox.local/~user"
+#define XBMC_SERVICE @"/torqueTv/xbmcConnect.php"
+#define STREAM_CONTROL @"/torqueTv/streamcontrol.php"
 
+
+#import <UIKit/UIKit.h>
+#import "NowPlayingViewController.h"
 #import "Show.h"
 #import "Episode.h"
 

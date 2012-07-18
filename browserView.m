@@ -8,6 +8,7 @@
 
 
 
+
 #import "browserView.h"
 
 @interface browserView ()
@@ -28,24 +29,6 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     
-    NSString* urlString = @"http://theroyalwe.net/~user/torqueTv/xbmcConnect.php";
-    
-
-
-        NSURL *url = [[NSURL alloc]initWithString:urlString];
-
-        NSMutableURLRequest *postRequest = [[NSMutableURLRequest alloc]initWithURL:url];
-    if(showdetailsId){
-        [postRequest setHTTPMethod:@"POST"];
-        NSString *postString = [[NSString alloc]initWithFormat:@"showid=%@", showdetailsId];
-        [postRequest setValue:[NSString stringWithFormat:@"%d", postString.length] forHTTPHeaderField:@"Content-length"];
-        [postRequest setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
-        postRequest.timeoutInterval = 10;
-
-    }
-
-        [[NSURLConnection alloc]initWithRequest:postRequest delegate:self];
-
         
         
     
@@ -177,6 +160,21 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+    if(showdetailsId) {
+        //send the path to streamcontrol.php
+        
+        UINavigationController *nc = (UINavigationController*)[self.tabBarController.viewControllers objectAtIndex:0];
+        NowPlayingViewController *npvc = [nc.viewControllers objectAtIndex:0];
+        
+        npvc.path = [[shows objectAtIndex:indexPath.row]path];
+        
+        
+        
+        
+        
+        [[self tabBarController]setSelectedIndex:1];
+        //set tabBar viewController to other index...
+    }
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -184,12 +182,39 @@
     
     if(!showdetailsId){
         browserView *eppBrowser = [segue destinationViewController];
+
         NSIndexPath *selected = [self.tableView indexPathForSelectedRow];
+        eppBrowser.title = [[shows objectAtIndex:selected.row]showTitle];
         eppBrowser.showdetailsId = [[shows objectAtIndex:selected.row]showId];
     }
     
 }
 
+
+
+-(void)sendPost:(NSString*)urlString :(NSString*)postString{
+    
+    
+    //NSString* urlString = [REMOTE_HOST stringByAppendingString:XBMC_SERVICE];
+    
+    NSURL *url = [[NSURL alloc]initWithString:urlString];
+    
+    NSMutableURLRequest *postRequest = [[NSMutableURLRequest alloc]initWithURL:url];
+    if(showdetailsId){
+        [postRequest setHTTPMethod:@"POST"];
+        NSString *postString = [[NSString alloc]initWithFormat:@"showid=%@", showdetailsId];
+        [postRequest setValue:[NSString stringWithFormat:@"%d", postString.length] forHTTPHeaderField:@"Content-length"];
+        [postRequest setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
+        postRequest.timeoutInterval = 10;
+        
+    }
+    
+    [[NSURLConnection alloc]initWithRequest:postRequest delegate:self];
+    
+
+    
+    
+}
 
 
 -(void)connection:(NSURLConnection*)connection didReceiveData:(NSData *)data{
@@ -228,6 +253,7 @@
     
     
 }
+
 
 -(void)fetchedEpisodes:(NSData*)responseData{
     

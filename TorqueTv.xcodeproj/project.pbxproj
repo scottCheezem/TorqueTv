@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE343D8D15B5F8D50059DDED /* NowPlayingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE343D8C15B5F8D50059DDED /* NowPlayingViewController.m */; };
 		CE70923615B495AE00C04760 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE70923515B495AE00C04760 /* UIKit.framework */; };
 		CE70923815B495AE00C04760 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE70923715B495AE00C04760 /* Foundation.framework */; };
 		CE70923A15B495AE00C04760 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE70923915B495AE00C04760 /* CoreGraphics.framework */; };
@@ -25,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE343D8B15B5F8D50059DDED /* NowPlayingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NowPlayingViewController.h; path = ../NowPlayingViewController.h; sourceTree = "<group>"; };
+		CE343D8C15B5F8D50059DDED /* NowPlayingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NowPlayingViewController.m; path = ../NowPlayingViewController.m; sourceTree = "<group>"; };
 		CE70923115B495AE00C04760 /* TorqueTv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TorqueTv.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE70923515B495AE00C04760 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CE70923715B495AE00C04760 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -93,6 +96,8 @@
 		CE70923B15B495AE00C04760 /* TorqueTv */ = {
 			isa = PBXGroup;
 			children = (
+				CE343D8B15B5F8D50059DDED /* NowPlayingViewController.h */,
+				CE343D8C15B5F8D50059DDED /* NowPlayingViewController.m */,
 				CE70927315B4A5C500C04760 /* Episode.h */,
 				CE70927415B4A5C500C04760 /* Episode.m */,
 				CE70926D15B4A4C700C04760 /* Show.h */,
@@ -196,6 +201,7 @@
 				CE70926615B4982F00C04760 /* browserView.m in Sources */,
 				CE70926F15B4A4C700C04760 /* Show.m in Sources */,
 				CE70927515B4A5C500C04760 /* Episode.m in Sources */,
+				CE343D8D15B5F8D50059DDED /* NowPlayingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +323,7 @@
 				CE70925F15B495AF00C04760 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
