@@ -29,8 +29,12 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     
+    
+    NSString *urlString = [REMOTE_HOST stringByAppendingString:XBMC_SERVICE];
         
-        
+    NSString *postString = (showdetailsId)?[@"showid=" stringByAppendingString:showdetailsId]:nil;
+
+    [self sendPost:urlString :postString delegate:self];        
     
     
 }
@@ -166,9 +170,11 @@
         UINavigationController *nc = (UINavigationController*)[self.tabBarController.viewControllers objectAtIndex:0];
         NowPlayingViewController *npvc = [nc.viewControllers objectAtIndex:0];
         
-        npvc.path = [[shows objectAtIndex:indexPath.row]path];
+        //npvc.path = [[shows objectAtIndex:indexPath.row]path];
         
-        
+        NSString *urlString = [REMOTE_HOST stringByAppendingString:STREAM_CONTROL];
+        NSString *postString = [@"act=" stringByAppendingString:[[shows objectAtIndex:indexPath.row]path]];
+        [self sendPost:urlString :postString delegate:npvc];
         
         
         
@@ -192,7 +198,7 @@
 
 
 
--(void)sendPost:(NSString*)urlString :(NSString*)postString{
+-(void)sendPost:(NSString*)urlString :(NSString*)postString delegate:(id)delegate{
     
     
     //NSString* urlString = [REMOTE_HOST stringByAppendingString:XBMC_SERVICE];
@@ -200,16 +206,16 @@
     NSURL *url = [[NSURL alloc]initWithString:urlString];
     
     NSMutableURLRequest *postRequest = [[NSMutableURLRequest alloc]initWithURL:url];
-    if(showdetailsId){
+    if(postString){
         [postRequest setHTTPMethod:@"POST"];
-        NSString *postString = [[NSString alloc]initWithFormat:@"showid=%@", showdetailsId];
+        //NSString *postString = [[NSString alloc]initWithFormat:@"showid=%@", showdetailsId];
         [postRequest setValue:[NSString stringWithFormat:@"%d", postString.length] forHTTPHeaderField:@"Content-length"];
         [postRequest setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
         postRequest.timeoutInterval = 10;
         
     }
     
-    [[NSURLConnection alloc]initWithRequest:postRequest delegate:self];
+    [[NSURLConnection alloc]initWithRequest:postRequest delegate:delegate];
     
 
     

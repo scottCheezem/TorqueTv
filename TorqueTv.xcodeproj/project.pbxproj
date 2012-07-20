@@ -23,6 +23,7 @@
 		CE70926615B4982F00C04760 /* browserView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE70926515B4982F00C04760 /* browserView.m */; };
 		CE70926F15B4A4C700C04760 /* Show.m in Sources */ = {isa = PBXBuildFile; fileRef = CE70926E15B4A4C700C04760 /* Show.m */; };
 		CE70927515B4A5C500C04760 /* Episode.m in Sources */ = {isa = PBXBuildFile; fileRef = CE70927415B4A5C500C04760 /* Episode.m */; };
+		CE7EFB3215B737FF00088762 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7EFB3115B737FF00088762 /* MediaPlayer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		CE70926E15B4A4C700C04760 /* Show.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Show.m; path = ../Show.m; sourceTree = "<group>"; };
 		CE70927315B4A5C500C04760 /* Episode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Episode.h; path = ../Episode.h; sourceTree = "<group>"; };
 		CE70927415B4A5C500C04760 /* Episode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Episode.m; path = ../Episode.m; sourceTree = "<group>"; };
+		CE7EFB3115B737FF00088762 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE7EFB3215B737FF00088762 /* MediaPlayer.framework in Frameworks */,
 				CE70923615B495AE00C04760 /* UIKit.framework in Frameworks */,
 				CE70923815B495AE00C04760 /* Foundation.framework in Frameworks */,
 				CE70923A15B495AE00C04760 /* CoreGraphics.framework in Frameworks */,
@@ -69,6 +72,7 @@
 		CE70922615B495AE00C04760 = {
 			isa = PBXGroup;
 			children = (
+				CE7EFB3115B737FF00088762 /* MediaPlayer.framework */,
 				CE70923B15B495AE00C04760 /* TorqueTv */,
 				CE70923415B495AE00C04760 /* Frameworks */,
 				CE70923215B495AE00C04760 /* Products */,
@@ -285,10 +289,12 @@
 		CE70925E15B495AF00C04760 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Scott Cheezem (9RYNT8Z3J9)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TorqueTv/TorqueTv-Prefix.pch";
 				INFOPLIST_FILE = "TorqueTv/TorqueTv-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "D3EE49B3-2F77-4733-84FB-00C359677760";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -296,10 +302,12 @@
 		CE70925F15B495AF00C04760 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Scott Cheezem (9RYNT8Z3J9)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TorqueTv/TorqueTv-Prefix.pch";
 				INFOPLIST_FILE = "TorqueTv/TorqueTv-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "D3EE49B3-2F77-4733-84FB-00C359677760";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

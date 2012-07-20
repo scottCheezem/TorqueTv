@@ -10,6 +10,7 @@
 #define LOCAL_HOST @"http://ubunbox.local/~user"
 #define XBMC_SERVICE @"/torqueTv/xbmcConnect.php"
 #define STREAM_CONTROL @"/torqueTv/streamcontrol.php"
+#define VIDEO_STREAM_URL @"/streaming/showstream.m3u8"
 
 
 #import <UIKit/UIKit.h>
@@ -23,4 +24,7 @@
     
 }
 @property(nonatomic, retain)NSString* showdetailsId;
+
+-(void)sendPost:(NSString*)urlString :(NSString*)postString delegate:(id)delegate;
+
 @end

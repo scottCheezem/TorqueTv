@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <MediaPlayer/MediaPlayer.h>
+#import "browserView.h"
 @interface NowPlayingViewController : UIViewController
 @property(nonatomic, retain)NSString* path;
 @property (weak, nonatomic) IBOutlet UIButton *stopButton;
+- (IBAction)stopAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UIWebView *webvideo;
 
 @end
