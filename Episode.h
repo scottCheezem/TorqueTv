@@ -12,4 +12,7 @@
 @property(nonatomic, retain)NSString* epTitle;
 @property(nonatomic, retain)NSString* path;
 @property(nonatomic, retain)NSString* epCode;
+@property(nonatomic, retain)NSString* thumb;
+@property(nonatomic, retain)NSString* plot;
+
 @end

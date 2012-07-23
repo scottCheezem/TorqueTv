@@ -25,7 +25,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <segue destination="OeT-oC-rh6" kind="push" identifier="episdoeSegue" id="PtD-4z-Dsb"/>
+                                    <segue destination="OeT-oC-rh6" kind="push" identifier="episodeSegue" id="PtD-4z-Dsb"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -33,7 +33,7 @@
                     <navigationItem key="navigationItem" title="Shows" id="HTc-mP-HLc"/>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="1267" y="-174"/>
+            <point key="canvasLocation" x="1015" y="-3466"/>
         </scene>
         <!--Browser View-->
         <scene sceneID="Z7c-ML-v6K">
@@ -79,7 +79,37 @@
                     <navigationItem key="navigationItem" id="MOx-GB-dWW"/>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="1777" y="-176"/>
+            <point key="canvasLocation" x="1525" y="-3468"/>
+        </scene>
+        <!--Details View Controller-->
+        <scene sceneID="6O6-J3-DEa">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hBQ-rT-aXe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="Y1M-q2-RzV" customClass="DetailsViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="J2H-Xq-NYz">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Y00-Pk-hF8">
+                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Y1M-q2-RzV" id="bKw-bz-hHP"/>
+                            <outlet property="delegate" destination="Y1M-q2-RzV" id="6Cf-kL-XdK"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="fXA-T4-aVR"/>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="1993" y="-3472"/>
         </scene>
         <!--Navigation Controller - Browse-->
         <scene sceneID="H1h-5c-QnU">
@@ -95,7 +125,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="653" y="-174"/>
+            <point key="canvasLocation" x="401" y="-3466"/>
         </scene>
         <!--Now Playing View Controller - Second-->
         <scene sceneID="13">
@@ -107,7 +137,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="JaM-NG-XD6">
-                                <rect key="frame" x="124" y="309" width="72" height="37"/>
+                                <rect key="frame" x="124" y="354" width="72" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Stop">
@@ -137,7 +167,55 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="653" y="498"/>
+            <point key="canvasLocation" x="401" y="-2794"/>
+        </scene>
+        <!--Settings View Controller - Item-->
+        <scene sceneID="5Pw-Fl-y9b">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KNU-2G-fLo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="BUs-ca-qdB" customClass="SettingsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ycr-Oo-iLv">
+                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="SS5-TV-MsN">
+                                <rect key="frame" x="57" y="231" width="207" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Low"/>
+                                    <segment title="Med"/>
+                                    <segment title="High"/>
+                                </segments>
+                            </segmentedControl>
+                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="1S6-Ct-kVJ">
+                                <rect key="frame" x="121" y="133" width="79" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Remote" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="K3Q-T1-KIz">
+                                <rect key="frame" x="130" y="87" width="60" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Quality" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="3Xq-t6-4UM">
+                                <rect key="frame" x="134" y="189" width="53" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="9Yb-2V-LnB"/>
+                    <connections>
+                        <outlet property="qualitySeg" destination="SS5-TV-MsN" id="hDD-Eh-e7J"/>
+                        <outlet property="remoteToggle" destination="1S6-Ct-kVJ" id="6ep-lT-WyN"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="406" y="-2027"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="15">
@@ -153,15 +231,39 @@
                     <connections>
                         <segue destination="g1I-xd-u1V" kind="relationship" relationship="viewControllers" id="Bvh-hQ-uEx"/>
                         <segue destination="3" kind="relationship" relationship="viewControllers" id="J2d-a2-bk4"/>
+                        <segue destination="BUs-ca-qdB" kind="relationship" relationship="viewControllers" id="Qs9-bV-jcd"/>
                     </connections>
                 </tabBarController>
             </objects>
-            <point key="canvasLocation" x="132" y="180"/>
+            <point key="canvasLocation" x="-120" y="-3112"/>
         </scene>
     </scenes>
     <resources>
         <image name="second" width="16" height="16"/>
     </resources>
+    <classes>
+        <class className="DetailsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailsViewController.h"/>
+        </class>
+        <class className="NowPlayingViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NowPlayingViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="stopAction:"/>
+                <relationship kind="outlet" name="stopButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="webvideo" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="SettingsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="qualitySeg" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="remoteToggle" candidateClass="UISwitch"/>
+            </relationships>
+        </class>
+        <class className="browserView" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/browserView.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

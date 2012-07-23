@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE06BBFF15BDC16800E84056 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE06BBFE15BDC16800E84056 /* DetailsViewController.m */; };
+		CE06BC0315BDE9BC00E84056 /* AppDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = CE06BC0215BDE9BC00E84056 /* AppDefaults.m */; };
 		CE343D8D15B5F8D50059DDED /* NowPlayingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE343D8C15B5F8D50059DDED /* NowPlayingViewController.m */; };
 		CE70923615B495AE00C04760 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE70923515B495AE00C04760 /* UIKit.framework */; };
 		CE70923815B495AE00C04760 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE70923715B495AE00C04760 /* Foundation.framework */; };
@@ -24,9 +26,14 @@
 		CE70926F15B4A4C700C04760 /* Show.m in Sources */ = {isa = PBXBuildFile; fileRef = CE70926E15B4A4C700C04760 /* Show.m */; };
 		CE70927515B4A5C500C04760 /* Episode.m in Sources */ = {isa = PBXBuildFile; fileRef = CE70927415B4A5C500C04760 /* Episode.m */; };
 		CE7EFB3215B737FF00088762 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7EFB3115B737FF00088762 /* MediaPlayer.framework */; };
+		CE8EFF8715BA092100DE7F7C /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8EFF8615BA092100DE7F7C /* SettingsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE06BBFD15BDC16800E84056 /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		CE06BBFE15BDC16800E84056 /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		CE06BC0115BDE9BC00E84056 /* AppDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDefaults.h; sourceTree = "<group>"; };
+		CE06BC0215BDE9BC00E84056 /* AppDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDefaults.m; sourceTree = "<group>"; };
 		CE343D8B15B5F8D50059DDED /* NowPlayingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NowPlayingViewController.h; path = ../NowPlayingViewController.h; sourceTree = "<group>"; };
 		CE343D8C15B5F8D50059DDED /* NowPlayingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NowPlayingViewController.m; path = ../NowPlayingViewController.m; sourceTree = "<group>"; };
 		CE70923115B495AE00C04760 /* TorqueTv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TorqueTv.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,6 +59,8 @@
 		CE70927315B4A5C500C04760 /* Episode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Episode.h; path = ../Episode.h; sourceTree = "<group>"; };
 		CE70927415B4A5C500C04760 /* Episode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Episode.m; path = ../Episode.m; sourceTree = "<group>"; };
 		CE7EFB3115B737FF00088762 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		CE8EFF8515BA092100DE7F7C /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		CE8EFF8615BA092100DE7F7C /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,9 +118,15 @@
 				CE70924415B495AE00C04760 /* AppDelegate.h */,
 				CE70924515B495AE00C04760 /* AppDelegate.m */,
 				CE70924715B495AE00C04760 /* MainStoryboard_iPhone.storyboard */,
+				CE06BBFD15BDC16800E84056 /* DetailsViewController.h */,
+				CE06BBFE15BDC16800E84056 /* DetailsViewController.m */,
+				CE8EFF8515BA092100DE7F7C /* SettingsViewController.h */,
+				CE8EFF8615BA092100DE7F7C /* SettingsViewController.m */,
 				CE70924A15B495AE00C04760 /* MainStoryboard_iPad.storyboard */,
 				CE70926415B4982F00C04760 /* browserView.h */,
 				CE70926515B4982F00C04760 /* browserView.m */,
+				CE06BC0115BDE9BC00E84056 /* AppDefaults.h */,
+				CE06BC0215BDE9BC00E84056 /* AppDefaults.m */,
 				CE70925015B495AF00C04760 /* first.png */,
 				CE70925215B495AF00C04760 /* first@2x.png */,
 				CE70925715B495AF00C04760 /* second.png */,
@@ -206,6 +221,9 @@
 				CE70926F15B4A4C700C04760 /* Show.m in Sources */,
 				CE70927515B4A5C500C04760 /* Episode.m in Sources */,
 				CE343D8D15B5F8D50059DDED /* NowPlayingViewController.m in Sources */,
+				CE8EFF8715BA092100DE7F7C /* SettingsViewController.m in Sources */,
+				CE06BBFF15BDC16800E84056 /* DetailsViewController.m in Sources */,
+				CE06BC0315BDE9BC00E84056 /* AppDefaults.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

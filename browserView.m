@@ -67,7 +67,8 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    //return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return YES;
 }
 
 #pragma mark - Table view data source
@@ -113,6 +114,9 @@
     
 
 }
+
+
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -175,23 +179,48 @@
         NSString *urlString = [REMOTE_HOST stringByAppendingString:STREAM_CONTROL];
         NSString *postString = [@"act=" stringByAppendingString:[[shows objectAtIndex:indexPath.row]path]];
         [self sendPost:urlString :postString delegate:npvc];
+        [self goToNowPlaying];
+        NSLog(@"%@",postString);
+        //NSTimer *timeout = [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(goToNowPlaying) userInfo:nil repeats:NO];
         
-        
-        
-        [[self tabBarController]setSelectedIndex:1];
-        //set tabBar viewController to other index...
     }
 }
 
+
+-(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
+    [self performSegueWithIdentifier:@"detailsSegue" sender:nil];
+}
+
+
+-(void) goToNowPlaying{
+    [[self tabBarController]setSelectedIndex:1];
+    //set tabBar viewController to other index...    
+}
+
+
+
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
-    
-    if(!showdetailsId){
+
+    NSIndexPath *selected = [self.tableView indexPathForSelectedRow];    
+
+    if([segue.identifier isEqualToString:@"episodeSegue"]){
         browserView *eppBrowser = [segue destinationViewController];
 
-        NSIndexPath *selected = [self.tableView indexPathForSelectedRow];
+
         eppBrowser.title = [[shows objectAtIndex:selected.row]showTitle];
         eppBrowser.showdetailsId = [[shows objectAtIndex:selected.row]showId];
+    }else if([segue.identifier isEqualToString: @"detailsSegue"]){
+        
+        DetailsViewController *details = [segue destinationViewController];
+        
+        details.title = [[shows objectAtIndex:selected.row]epTitle];
+        details.thumbUrl = [[shows objectAtIndex:selected.row]thumb];
+        details.plot = [[shows objectAtIndex:selected.row]plot];
+        
+        
+        
     }
     
 }
@@ -217,30 +246,43 @@
     
     [[NSURLConnection alloc]initWithRequest:postRequest delegate:delegate];
     
-
-    
+    /*NSURLResponse *response = nil;
+    NSError *err = nil;
+    NSData *data = [NSURLConnection sendSynchronousRequest:postRequest returningResponse:&response error:&err ];*/
     
 }
 
-
+-(void)connection:(NSURLConnection*)connection didFailWithError:(NSError *)error{
+    
+    NSLog(@"There was an error : %@", error);
+    
+}
 -(void)connection:(NSURLConnection*)connection didReceiveData:(NSData *)data{
     //NSLog(@"Data - %@", data);
     [recievedData appendData:data];
+}
+
+-(void)connectionDidFinishLoading:(NSURLConnection*) connection{
     if(showdetailsId){
         
         [self fetchedEpisodes:recievedData];
     }else{
         [self fetchedShowData:recievedData];
     }
+    
+    
 }
-
-
 
 
 -(void)fetchedShowData:(NSData*)responseData{
     
     NSError *err;
     NSDictionary* jsonResponse = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&err];
+    
+    if(err){
+        NSLog(@"err : %@", err);
+    }
+    
     NSArray *showsJson = [jsonResponse objectForKey:@"shows"];
     
     for (NSDictionary *showDict in showsJson) {
@@ -265,6 +307,10 @@
     
     NSError *err;
     NSDictionary* jsonResponse = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&err];
+    if(err){
+        NSLog(@"err : %@", err);
+    }
+
     NSLog(@"json - %@", jsonResponse);
     NSArray *episodeJson = [jsonResponse objectForKey:@"episodes"];
     

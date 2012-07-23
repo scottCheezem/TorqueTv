@@ -15,6 +15,7 @@
 
 #import <UIKit/UIKit.h>
 #import "NowPlayingViewController.h"
+#import "DetailsViewController.h"
 #import "Show.h"
 #import "Episode.h"
 

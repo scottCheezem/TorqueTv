@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <MediaPlayer/MediaPlayer.h>
 #import "browserView.h"
-@interface NowPlayingViewController : UIViewController
+@interface NowPlayingViewController : UIViewController{
+    NSMutableData *recievedData;
+}
 @property(nonatomic, retain)NSString* path;
 @property (weak, nonatomic) IBOutlet UIButton *stopButton;
 - (IBAction)stopAction:(id)sender;
