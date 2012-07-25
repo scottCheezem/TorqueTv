@@ -78,7 +78,8 @@
     //send post to stop stream
     //UINavigationController *nc = (UINavigationController*)[self.tabBarController.viewControllers objectAtIndex:0];
     browserView *browser = [[browserView alloc]init];//[nc.viewControllers objectAtIndex:1];
-    [browser sendPost:[REMOTE_HOST stringByAppendingString:STREAM_CONTROL] :@"act=stop" delegate:self];
+    NSString *host = ([[AppDefaults appDefaults]remote])?REMOTE_HOST:LOCAL_HOST;
+    [browser sendPost:[host stringByAppendingString:STREAM_CONTROL] :@"act=stop" delegate:self];
     
     
     

@@ -8,8 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@interface AppDefaults : NSObject
+@interface AppDefaults : NSObject{
+    NSUserDefaults *defaults;
+}
 @property(nonatomic, retain)NSString* br;
 @property(nonatomic)BOOL remote;
 +(AppDefaults*)appDefaults;
+-(void)setRemote:(BOOL)_remote;
+-(void)setBr:(NSString *)_br;
 @end

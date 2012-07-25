@@ -16,16 +16,50 @@
 -(id)init{
     self = [super init];
     if(self != nil){
-        self.remote = YES;
-        self.br = @"64";
+        
+        defaults = [NSUserDefaults standardUserDefaults];
+       
+        NSLog(@"loaded remote with %d", [defaults boolForKey:@"remote"]);
+        remote = [defaults boolForKey:@"remote"];
+        NSLog(@"self.remote is now %d", remote);
         
         
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        self.remote = [defaults boolForKey:@"remote"];
-        self.br = [defaults stringForKey:@"br"];
+        br = [defaults stringForKey:@"br"];        
+        
+        if([NSNumber numberWithBool:self.remote] == nil){
+            self.remote = YES;
+            
+        }
+
+        if(self.br == nil){
+            self.br = @"64";
+        }
+        NSLog(@"loaded remote:%d. br:%@", self.remote, self.br);
+
         
     }
-    
+    return self;
 }
+
+-(void)setRemote:(BOOL)_remote{
+    [defaults setBool:_remote forKey:@"remote"];
+}
+
+-(void)setBr:(NSString *)_br{
+    [defaults setObject:_br forKey:@"br"];
+}
+
+
++(AppDefaults*)appDefaults{
+    static AppDefaults *appDefaults = nil;
+    static dispatch_once_t onceToken;
+
+    dispatch_once(&onceToken, ^{
+        appDefaults = [[self alloc]init];
+    });
+    
+    return appDefaults;
+}
+
 
 @end

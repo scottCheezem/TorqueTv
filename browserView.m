@@ -30,7 +30,9 @@
 -(void)viewWillAppear:(BOOL)animated{
     
     
-    NSString *urlString = [REMOTE_HOST stringByAppendingString:XBMC_SERVICE];
+    NSString *host = ([[AppDefaults appDefaults]remote])?REMOTE_HOST:LOCAL_HOST;
+    
+    NSString *urlString = [host stringByAppendingString:XBMC_SERVICE];
         
     NSString *postString = (showdetailsId)?[@"showid=" stringByAppendingString:showdetailsId]:nil;
 
@@ -177,7 +179,8 @@
         //npvc.path = [[shows objectAtIndex:indexPath.row]path];
         
         NSString *urlString = [REMOTE_HOST stringByAppendingString:STREAM_CONTROL];
-        NSString *postString = [@"act=" stringByAppendingString:[[shows objectAtIndex:indexPath.row]path]];
+        //NSString *postString = [@"act=" stringByAppendingString:[[shows objectAtIndex:indexPath.row]path]];
+        NSString *postString = [NSString stringWithFormat:@"act=%@&br=%@", [[shows objectAtIndex:indexPath.row]path], [[AppDefaults appDefaults]br]];
         [self sendPost:urlString :postString delegate:npvc];
         [self goToNowPlaying];
         NSLog(@"%@",postString);
@@ -263,6 +266,10 @@
 }
 
 -(void)connectionDidFinishLoading:(NSURLConnection*) connection{
+    
+
+    
+     NSLog(@"%@", recievedData);
     if(showdetailsId){
         
         [self fetchedEpisodes:recievedData];

@@ -29,6 +29,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    qualityOptions = [NSArray arrayWithObjects:@"64", @"128", @"256", nil];
+    
+    self.remoteToggle.on = [[AppDefaults appDefaults]remote];
+    self.qualitySeg.selectedSegmentIndex = [qualityOptions indexOfObject:[[AppDefaults appDefaults]br]];
+    
 	// Do any additional setup after loading the view.
 }
 
@@ -43,7 +48,34 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return YES;//(interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+
+
+
+
+
+- (IBAction)remotetoggleAction:(id)sender {
+    
+    NSLog(@"remote was %@", [[AppDefaults appDefaults]remote]);
+    NSLog(@"setting remote to %d", self.remoteToggle.on );
+    [[AppDefaults appDefaults]setRemote:self.remoteToggle.on];
+    
+        
+
+    
+}
+
+- (IBAction)qualitySegAction:(id)sender {
+    
+    
+    
+    
+    [[AppDefaults appDefaults]setBr:[qualityOptions objectAtIndex:qualitySeg.selectedSegmentIndex]];
+    NSLog(@"setting quality : %@", [qualityOptions objectAtIndex:qualitySeg.selectedSegmentIndex]);
+    NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
+    [defaults setObject:[qualityOptions objectAtIndex:qualitySeg.selectedSegmentIndex] forKey:@"br"];
+    
+}
 @end

@@ -14,6 +14,7 @@
 
 
 #import <UIKit/UIKit.h>
+#import "AppDefaults.h"
 #import "NowPlayingViewController.h"
 #import "DetailsViewController.h"
 #import "Show.h"
