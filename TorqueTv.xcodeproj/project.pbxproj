@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CE06BBFF15BDC16800E84056 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE06BBFE15BDC16800E84056 /* DetailsViewController.m */; };
 		CE06BC0315BDE9BC00E84056 /* AppDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = CE06BC0215BDE9BC00E84056 /* AppDefaults.m */; };
 		CE343D8D15B5F8D50059DDED /* NowPlayingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE343D8C15B5F8D50059DDED /* NowPlayingViewController.m */; };
+		CE60F8E015C0581000E5F594 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE60F8DF15C0581000E5F594 /* DetailViewController.m */; };
+		CE60F8E615C063BD00E5F594 /* torqueTvIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CE60F8E515C063BD00E5F594 /* torqueTvIcon.png */; };
 		CE70923615B495AE00C04760 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE70923515B495AE00C04760 /* UIKit.framework */; };
 		CE70923815B495AE00C04760 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE70923715B495AE00C04760 /* Foundation.framework */; };
 		CE70923A15B495AE00C04760 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE70923915B495AE00C04760 /* CoreGraphics.framework */; };
@@ -30,12 +31,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CE06BBFD15BDC16800E84056 /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
-		CE06BBFE15BDC16800E84056 /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		CE06BC0115BDE9BC00E84056 /* AppDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDefaults.h; sourceTree = "<group>"; };
 		CE06BC0215BDE9BC00E84056 /* AppDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDefaults.m; sourceTree = "<group>"; };
 		CE343D8B15B5F8D50059DDED /* NowPlayingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NowPlayingViewController.h; path = ../NowPlayingViewController.h; sourceTree = "<group>"; };
 		CE343D8C15B5F8D50059DDED /* NowPlayingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NowPlayingViewController.m; path = ../NowPlayingViewController.m; sourceTree = "<group>"; };
+		CE60F8DE15C0581000E5F594 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		CE60F8DF15C0581000E5F594 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		CE60F8E515C063BD00E5F594 /* torqueTvIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = torqueTvIcon.png; sourceTree = "<group>"; };
 		CE70923115B495AE00C04760 /* TorqueTv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TorqueTv.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE70923515B495AE00C04760 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CE70923715B495AE00C04760 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -81,6 +83,9 @@
 		CE70922615B495AE00C04760 = {
 			isa = PBXGroup;
 			children = (
+				CE60F8E515C063BD00E5F594 /* torqueTvIcon.png */,
+				CE60F8DE15C0581000E5F594 /* DetailViewController.h */,
+				CE60F8DF15C0581000E5F594 /* DetailViewController.m */,
 				CE7EFB3115B737FF00088762 /* MediaPlayer.framework */,
 				CE70923B15B495AE00C04760 /* TorqueTv */,
 				CE70923415B495AE00C04760 /* Frameworks */,
@@ -118,8 +123,6 @@
 				CE70924415B495AE00C04760 /* AppDelegate.h */,
 				CE70924515B495AE00C04760 /* AppDelegate.m */,
 				CE70924715B495AE00C04760 /* MainStoryboard_iPhone.storyboard */,
-				CE06BBFD15BDC16800E84056 /* DetailsViewController.h */,
-				CE06BBFE15BDC16800E84056 /* DetailsViewController.m */,
 				CE8EFF8515BA092100DE7F7C /* SettingsViewController.h */,
 				CE8EFF8615BA092100DE7F7C /* SettingsViewController.m */,
 				CE70924A15B495AE00C04760 /* MainStoryboard_iPad.storyboard */,
@@ -205,6 +208,7 @@
 				CE70925315B495AF00C04760 /* first@2x.png in Resources */,
 				CE70925815B495AF00C04760 /* second.png in Resources */,
 				CE70925A15B495AF00C04760 /* second@2x.png in Resources */,
+				CE60F8E615C063BD00E5F594 /* torqueTvIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,8 +226,8 @@
 				CE70927515B4A5C500C04760 /* Episode.m in Sources */,
 				CE343D8D15B5F8D50059DDED /* NowPlayingViewController.m in Sources */,
 				CE8EFF8715BA092100DE7F7C /* SettingsViewController.m in Sources */,
-				CE06BBFF15BDC16800E84056 /* DetailsViewController.m in Sources */,
 				CE06BC0315BDE9BC00E84056 /* AppDefaults.m in Sources */,
+				CE60F8E015C0581000E5F594 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +267,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -278,8 +283,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = NO;
 			};
 			name = Debug;
 		};
@@ -289,7 +297,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -298,6 +307,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -307,12 +318,14 @@
 		CE70925E15B495AF00C04760 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Scott Cheezem (9RYNT8Z3J9)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TorqueTv/TorqueTv-Prefix.pch";
 				INFOPLIST_FILE = "TorqueTv/TorqueTv-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "D3EE49B3-2F77-4733-84FB-00C359677760";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -320,12 +333,12 @@
 		CE70925F15B495AF00C04760 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Scott Cheezem (9RYNT8Z3J9)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TorqueTv/TorqueTv-Prefix.pch";
 				INFOPLIST_FILE = "TorqueTv/TorqueTv-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "D3EE49B3-2F77-4733-84FB-00C359677760";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

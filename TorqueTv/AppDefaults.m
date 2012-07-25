@@ -19,9 +19,9 @@
         
         defaults = [NSUserDefaults standardUserDefaults];
        
-        NSLog(@"loaded remote with %d", [defaults boolForKey:@"remote"]);
+        //NSLog(@"loaded remote with %d", [defaults boolForKey:@"remote"]);
         remote = [defaults boolForKey:@"remote"];
-        NSLog(@"self.remote is now %d", remote);
+        //NSLog(@"self.remote is now %d", remote);
         
         
         br = [defaults stringForKey:@"br"];        
@@ -34,7 +34,7 @@
         if(self.br == nil){
             self.br = @"64";
         }
-        NSLog(@"loaded remote:%d. br:%@", self.remote, self.br);
+//        NSLog(@"loaded remote:%d. br:%@", self.remote, self.br);
 
         
     }

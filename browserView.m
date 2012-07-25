@@ -183,14 +183,17 @@
         NSString *postString = [NSString stringWithFormat:@"act=%@&br=%@", [[shows objectAtIndex:indexPath.row]path], [[AppDefaults appDefaults]br]];
         [self sendPost:urlString :postString delegate:npvc];
         [self goToNowPlaying];
-        NSLog(@"%@",postString);
+        //NSLog(@"%@",postString);
         //NSTimer *timeout = [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(goToNowPlaying) userInfo:nil repeats:NO];
         
+    }else{
+        selected = indexPath;
     }
 }
 
 
 -(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
+    selected = indexPath;
     [self performSegueWithIdentifier:@"detailsSegue" sender:nil];
 }
 
@@ -206,9 +209,8 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
 
-    NSIndexPath *selected = [self.tableView indexPathForSelectedRow];    
-
     if([segue.identifier isEqualToString:@"episodeSegue"]){
+        selected = [self.tableView indexPathForSelectedRow];
         browserView *eppBrowser = [segue destinationViewController];
 
 
@@ -216,8 +218,8 @@
         eppBrowser.showdetailsId = [[shows objectAtIndex:selected.row]showId];
     }else if([segue.identifier isEqualToString: @"detailsSegue"]){
         
-        DetailsViewController *details = [segue destinationViewController];
-        
+        DetailViewController *details = [segue destinationViewController];
+        NSLog(@"thumbUrl %@ plot %@", [[shows objectAtIndex:selected.row]thumb], [[shows objectAtIndex:selected.row]plot]);
         details.title = [[shows objectAtIndex:selected.row]epTitle];
         details.thumbUrl = [[shows objectAtIndex:selected.row]thumb];
         details.plot = [[shows objectAtIndex:selected.row]plot];
@@ -257,7 +259,7 @@
 
 -(void)connection:(NSURLConnection*)connection didFailWithError:(NSError *)error{
     
-    NSLog(@"There was an error : %@", error);
+    //NSLog(@"There was an error : %@", error);
     
 }
 -(void)connection:(NSURLConnection*)connection didReceiveData:(NSData *)data{
@@ -269,7 +271,7 @@
     
 
     
-     NSLog(@"%@", recievedData);
+//     NSLog(@"%@", recievedData);
     if(showdetailsId){
         
         [self fetchedEpisodes:recievedData];
@@ -287,7 +289,7 @@
     NSDictionary* jsonResponse = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&err];
     
     if(err){
-        NSLog(@"err : %@", err);
+        //NSLog(@"err : %@", err);
     }
     
     NSArray *showsJson = [jsonResponse objectForKey:@"shows"];
@@ -315,10 +317,10 @@
     NSError *err;
     NSDictionary* jsonResponse = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&err];
     if(err){
-        NSLog(@"err : %@", err);
+        //NSLog(@"err : %@", err);
     }
 
-    NSLog(@"json - %@", jsonResponse);
+    //NSLog(@"json - %@", jsonResponse);
     NSArray *episodeJson = [jsonResponse objectForKey:@"episodes"];
     
     for(NSDictionary *epDict in episodeJson){
@@ -326,6 +328,8 @@
         episode.epTitle = [epDict valueForKey:@"epTitle"];
         episode.path = [epDict valueForKey:@"path"];
         episode.epCode =[epDict valueForKey:@"epCode"];
+        episode.thumb = [epDict valueForKey:@"thumb"];
+        episode.plot = [epDict valueForKey:@"plot"];
         [shows addObject:episode];
     }
     [self.tableView reloadData];

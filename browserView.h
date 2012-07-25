@@ -16,13 +16,14 @@
 #import <UIKit/UIKit.h>
 #import "AppDefaults.h"
 #import "NowPlayingViewController.h"
-#import "DetailsViewController.h"
+#import "DetailViewController.h"
 #import "Show.h"
 #import "Episode.h"
 
 @interface browserView : UITableViewController<UITableViewDelegate>{
     NSMutableArray* shows;
     NSMutableData *recievedData;
+    NSIndexPath *selected;
     
 }
 @property(nonatomic, retain)NSString* showdetailsId;
