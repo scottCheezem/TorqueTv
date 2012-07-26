@@ -19,9 +19,9 @@
         
         defaults = [NSUserDefaults standardUserDefaults];
        
-        //NSLog(@"loaded remote with %d", [defaults boolForKey:@"remote"]);
+        NSLog(@"loaded remote with %d", [defaults boolForKey:@"remote"]);
         remote = [defaults boolForKey:@"remote"];
-        //NSLog(@"self.remote is now %d", remote);
+        NSLog(@"self.remote is now %d", remote);
         
         
         br = [defaults stringForKey:@"br"];        
@@ -42,12 +42,17 @@
 }
 
 -(void)setRemote:(BOOL)_remote{
+    remote = _remote;
     [defaults setBool:_remote forKey:@"remote"];
+
 }
 
 -(void)setBr:(NSString *)_br{
+    br = _br;
     [defaults setObject:_br forKey:@"br"];
+
 }
+
 
 
 +(AppDefaults*)appDefaults{

@@ -42,26 +42,28 @@
 -(void)viewWillAppear:(BOOL)animated{
     
     
-    NSURL *videoUrl = [[NSURL alloc]initWithString:[REMOTE_HOST stringByAppendingString:VIDEO_STREAM_URL]];
+    self.webvideo = nil;
+    NSString *urlString = ([[AppDefaults appDefaults]remote])?REMOTE_HOST:LOCAL_HOST;
+    NSURL *videoUrl = [[NSURL alloc]initWithString:[urlString stringByAppendingString:VIDEO_STREAM_URL]];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:videoUrl];
-    [webvideo loadRequest:requestObj];
+    //[webvideo loadRequest:requestObj];
     
     
     
     //can't get this to work...
-    /*
+    
     MPMoviePlayerViewController *player = [[MPMoviePlayerViewController alloc]initWithContentURL:videoUrl];
+    player.moviePlayer.movieSourceType = MPMovieSourceTypeStreaming;
+    player.moviePlayer.controlStyle = MPMovieControlStyleDefault;
     
     [player.view setFrame:CGRectMake(0, 0, 320, 270)];
     [self.view addSubview:player.view];
-    player.moviePlayer.movieSourceType = MPMovieSourceTypeStreaming;
-    player.moviePlayer.controlStyle = MPMovieControlStyleDefault;
     
     
     if(player){
         [player.moviePlayer prepareToPlay];
         [player.moviePlayer play];
-    }*/
+    }
     
 }
 
@@ -90,12 +92,16 @@
     NSLog(@"npvc - recieved Response %@", response);
 }
 
--(void)connection:(NSURLConnection*)connection didReceiveData:(NSData *)data{
-    
+-(void)connection:(NSURLConnection*)connection didReceiveData:(NSData *)data{    
     NSLog(@"npvc - recieved data %@", data);    
 
+}
+
+-(void)connectionDidFinishLoading:(NSURLConnection*) connection{
+    NSLog(@"now playing - connection finished");
     
 }
+
 
 - (IBAction)stopAction:(id)sender {
     [self stopStream];

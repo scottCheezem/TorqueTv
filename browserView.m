@@ -171,17 +171,17 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
     if(showdetailsId) {
-        //send the path to streamcontrol.php
+
         
         UINavigationController *nc = (UINavigationController*)[self.tabBarController.viewControllers objectAtIndex:0];
         NowPlayingViewController *npvc = [nc.viewControllers objectAtIndex:0];
         
-        //npvc.path = [[shows objectAtIndex:indexPath.row]path];
-        
-        NSString *urlString = [REMOTE_HOST stringByAppendingString:STREAM_CONTROL];
-        //NSString *postString = [@"act=" stringByAppendingString:[[shows objectAtIndex:indexPath.row]path]];
+        NSString *hostString = ([[AppDefaults appDefaults]remote])?REMOTE_HOST:LOCAL_HOST;
+        NSString *urlString = [hostString stringByAppendingString:STREAM_CONTROL];
+
         NSString *postString = [NSString stringWithFormat:@"act=%@&br=%@", [[shows objectAtIndex:indexPath.row]path], [[AppDefaults appDefaults]br]];
-        [self sendPost:urlString :postString delegate:npvc];
+        NSString *str = [postString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        [self sendPost:urlString :str delegate:npvc];
         [self goToNowPlaying];
         //NSLog(@"%@",postString);
         //NSTimer *timeout = [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(goToNowPlaying) userInfo:nil repeats:NO];

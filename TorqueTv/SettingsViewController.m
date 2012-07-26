@@ -54,16 +54,14 @@
 
 
 
-
-
 - (IBAction)remotetoggleAction:(id)sender {
     
-    NSLog(@"remote was %@", [[AppDefaults appDefaults]remote]);
+    NSLog(@"remote was %d", [[AppDefaults appDefaults]remote]);
     NSLog(@"setting remote to %d", self.remoteToggle.on );
     [[AppDefaults appDefaults]setRemote:self.remoteToggle.on];
     
-        
 
+    NSLog(@"remote is now %d", [[AppDefaults appDefaults]remote]);
     
 }
 
@@ -76,6 +74,7 @@
     NSLog(@"setting quality : %@", [qualityOptions objectAtIndex:qualitySeg.selectedSegmentIndex]);
     NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
     [defaults setObject:[qualityOptions objectAtIndex:qualitySeg.selectedSegmentIndex] forKey:@"br"];
-    
+
+        
 }
 @end

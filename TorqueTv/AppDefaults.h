@@ -16,4 +16,5 @@
 +(AppDefaults*)appDefaults;
 -(void)setRemote:(BOOL)_remote;
 -(void)setBr:(NSString *)_br;
+
 @end

@@ -7,7 +7,7 @@
 //
 
 #define REMOTE_HOST @"http://theroyalwe.net/~user"
-#define LOCAL_HOST @"http://ubunbox.local/~user"
+#define LOCAL_HOST @"http://192.168.1.3/~user"
 #define XBMC_SERVICE @"/torqueTv/xbmcConnect.php"
 #define STREAM_CONTROL @"/torqueTv/streamcontrol.php"
 #define VIDEO_STREAM_URL @"/streaming/showstream.m3u8"
