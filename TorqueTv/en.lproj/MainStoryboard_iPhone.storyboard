@@ -163,23 +163,22 @@
                                     <action selector="stopAction:" destination="3" eventType="touchUpInside" id="win-h4-YPU"/>
                                 </connections>
                             </button>
-                            <webView hidden="YES" contentMode="scaleToFill" id="1aK-0n-Y2F">
-                                <rect key="frame" x="40" y="39" width="240" height="128"/>
+                            <view contentMode="scaleToFill" id="SNh-cy-Mff">
+                                <rect key="frame" x="57" y="34" width="206" height="153"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <dataDetectorType key="dataDetectorTypes"/>
-                            </webView>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Now Playing" image="second" id="6"/>
                     <connections>
+                        <outlet property="mpcontainer" destination="SNh-cy-Mff" id="tRQ-62-i6S"/>
                         <outlet property="stopButton" destination="JaM-NG-XD6" id="vEf-JE-piI"/>
-                        <outlet property="webvideo" destination="1aK-0n-Y2F" id="SpA-rS-Ds4"/>
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="401" y="-2794"/>
+            <point key="canvasLocation" x="533" y="-2855"/>
         </scene>
         <!--Settings View Controller - Item-->
         <scene sceneID="5Pw-Fl-y9b">
@@ -271,8 +270,8 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NowPlayingViewController.h"/>
             <relationships>
                 <relationship kind="action" name="stopAction:"/>
+                <relationship kind="outlet" name="mpcontainer" candidateClass="UIView"/>
                 <relationship kind="outlet" name="stopButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="webvideo" candidateClass="UIWebView"/>
             </relationships>
         </class>
         <class className="SettingsViewController" superclassName="UIViewController">
