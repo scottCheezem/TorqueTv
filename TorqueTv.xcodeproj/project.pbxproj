@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		CE06BC0315BDE9BC00E84056 /* AppDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = CE06BC0215BDE9BC00E84056 /* AppDefaults.m */; };
 		CE343D8D15B5F8D50059DDED /* NowPlayingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE343D8C15B5F8D50059DDED /* NowPlayingViewController.m */; };
-		CE54981815C19EE400719FCC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE54981715C19EE400719FCC /* AVFoundation.framework */; };
 		CE60F8E015C0581000E5F594 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE60F8DF15C0581000E5F594 /* DetailViewController.m */; };
 		CE60F8E615C063BD00E5F594 /* torqueTvIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CE60F8E515C063BD00E5F594 /* torqueTvIcon.png */; };
 		CE70923615B495AE00C04760 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE70923515B495AE00C04760 /* UIKit.framework */; };
@@ -27,7 +26,6 @@
 		CE70926615B4982F00C04760 /* browserView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE70926515B4982F00C04760 /* browserView.m */; };
 		CE70926F15B4A4C700C04760 /* Show.m in Sources */ = {isa = PBXBuildFile; fileRef = CE70926E15B4A4C700C04760 /* Show.m */; };
 		CE70927515B4A5C500C04760 /* Episode.m in Sources */ = {isa = PBXBuildFile; fileRef = CE70927415B4A5C500C04760 /* Episode.m */; };
-		CE7EFB3215B737FF00088762 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7EFB3115B737FF00088762 /* MediaPlayer.framework */; };
 		CE8EFF8715BA092100DE7F7C /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8EFF8615BA092100DE7F7C /* SettingsViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -36,7 +34,6 @@
 		CE06BC0215BDE9BC00E84056 /* AppDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDefaults.m; sourceTree = "<group>"; };
 		CE343D8B15B5F8D50059DDED /* NowPlayingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NowPlayingViewController.h; path = ../NowPlayingViewController.h; sourceTree = "<group>"; };
 		CE343D8C15B5F8D50059DDED /* NowPlayingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NowPlayingViewController.m; path = ../NowPlayingViewController.m; sourceTree = "<group>"; };
-		CE54981715C19EE400719FCC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		CE60F8DE15C0581000E5F594 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailViewController.h; path = ../DetailViewController.h; sourceTree = "<group>"; };
 		CE60F8DF15C0581000E5F594 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailViewController.m; path = ../DetailViewController.m; sourceTree = "<group>"; };
 		CE60F8E515C063BD00E5F594 /* torqueTvIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = torqueTvIcon.png; path = ../torqueTvIcon.png; sourceTree = "<group>"; };
@@ -62,7 +59,6 @@
 		CE70926E15B4A4C700C04760 /* Show.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Show.m; path = ../Show.m; sourceTree = "<group>"; };
 		CE70927315B4A5C500C04760 /* Episode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Episode.h; path = ../Episode.h; sourceTree = "<group>"; };
 		CE70927415B4A5C500C04760 /* Episode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Episode.m; path = ../Episode.m; sourceTree = "<group>"; };
-		CE7EFB3115B737FF00088762 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		CE8EFF8515BA092100DE7F7C /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		CE8EFF8615BA092100DE7F7C /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,8 +68,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE54981815C19EE400719FCC /* AVFoundation.framework in Frameworks */,
-				CE7EFB3215B737FF00088762 /* MediaPlayer.framework in Frameworks */,
 				CE70923615B495AE00C04760 /* UIKit.framework in Frameworks */,
 				CE70923815B495AE00C04760 /* Foundation.framework in Frameworks */,
 				CE70923A15B495AE00C04760 /* CoreGraphics.framework in Frameworks */,
@@ -86,8 +80,6 @@
 		CE70922615B495AE00C04760 = {
 			isa = PBXGroup;
 			children = (
-				CE54981715C19EE400719FCC /* AVFoundation.framework */,
-				CE7EFB3115B737FF00088762 /* MediaPlayer.framework */,
 				CE70923B15B495AE00C04760 /* TorqueTv */,
 				CE70923415B495AE00C04760 /* Frameworks */,
 				CE70923215B495AE00C04760 /* Products */,

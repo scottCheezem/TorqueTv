@@ -163,17 +163,27 @@
                                     <action selector="stopAction:" destination="3" eventType="touchUpInside" id="win-h4-YPU"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" id="SNh-cy-Mff">
-                                <rect key="frame" x="57" y="34" width="206" height="153"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="c0C-ut-u9B">
+                                <rect key="frame" x="123" y="291" width="75" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
-                            </view>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="refresh">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="refreshAction:" destination="3" eventType="touchUpInside" id="NiO-Ol-Rrf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Now Playing" image="second" id="6"/>
                     <connections>
-                        <outlet property="mpcontainer" destination="SNh-cy-Mff" id="tRQ-62-i6S"/>
+                        <outlet property="refreshButton" destination="c0C-ut-u9B" id="UHl-4r-fRc"/>
                         <outlet property="stopButton" destination="JaM-NG-XD6" id="vEf-JE-piI"/>
                     </connections>
                 </viewController>
@@ -269,8 +279,10 @@
         <class className="NowPlayingViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NowPlayingViewController.h"/>
             <relationships>
+                <relationship kind="action" name="refreshAction:"/>
                 <relationship kind="action" name="stopAction:"/>
                 <relationship kind="outlet" name="mpcontainer" candidateClass="UIView"/>
+                <relationship kind="outlet" name="refreshButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="stopButton" candidateClass="UIButton"/>
             </relationships>
         </class>

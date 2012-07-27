@@ -13,10 +13,11 @@
 @end
 
 @implementation NowPlayingViewController
-@synthesize mpcontainer;
-@synthesize webVideo;
 
-@synthesize stopButton, path, player;
+@synthesize webVideo;
+@synthesize refreshButton;
+
+@synthesize stopButton, path;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -38,7 +39,8 @@
 {
     [self setStopButton:nil];
     
-    [self setMpcontainer:nil];
+
+    [self setRefreshButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -47,63 +49,29 @@
     
     
     if(![self.view.subviews containsObject:webVideo]){
-        NSString *urlString = ([[AppDefaults appDefaults]remote])?REMOTE_HOST:LOCAL_HOST;
-        NSURL *videoUrl = [[NSURL alloc]initWithString:[urlString stringByAppendingString:VIDEO_STREAM_URL]];
-        NSString* html = [NSString stringWithFormat:@"<video src='%@' width=%d height=%d controls autoplay></video>", videoUrl, 320, 230];
-        webVideo = [[UIWebView alloc]initWithFrame:CGRectMake(-5, 0, self.view.frame.size.width, 230)];
-        //webVideo.frame = CGRectMake(-5, 0, self.view.frame.size.width, 230);
+//        NSString *urlString = ([[AppDefaults appDefaults]remote])?REMOTE_HOST:LOCAL_HOST;
+//        NSURL *videoUrl = [[NSURL alloc]initWithString:[urlString stringByAppendingString:VIDEO_STREAM_URL]];
+//        NSString* html = [NSString stringWithFormat:@"<video src='%@' width=%d height=%d controls autoplay></video>", videoUrl, 320, 230];
+//        webVideo = [[UIWebView alloc]initWithFrame:CGRectMake(-5, 0, self.view.frame.size.width, 230)];
+//        //webVideo.frame = CGRectMake(-5, 0, self.view.frame.size.width, 230);
+//        
+//
+//        [self.view addSubview:webVideo];
+//        [webVideo loadHTMLString:html baseURL:nil];
         
-
-        [self.view addSubview:webVideo];
-        [webVideo loadHTMLString:html baseURL:nil];
+        
+        [self refreshPlayer];
+        
     }
 
 
     
     
-    //    this works now
-    
-
-//    player = [[MPMoviePlayerViewController alloc]init];
-//    player.moviePlayer.allowsAirPlay = YES;
-//    [player.view setFrame:CGRectMake(0, 0, 320, 240)];
-//    player.moviePlayer.movieSourceType = MPMovieSourceTypeStreaming;
-//    
-//    player.moviePlayer.contentURL = videoUrl;
-//    player.moviePlayer.controlStyle = MPMovieControlStyleEmbedded;
-//    
-//    
-//    
-//    //[self presentMoviePlayerViewControllerAnimated:player];
-//    [self.mpcontainer addSubview:player.view];
-//    
-//    
-//    if(player){
-//        
-//        [player.moviePlayer prepareToPlay];
-//        [player.moviePlayer play];
-//    }
-//    
-//    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(enterFullScreen) name:MPMoviePlayerDidEnterFullscreenNotification object:player.moviePlayer];
-//    
-//    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(exitFullScreen) name:MPMoviePlayerDidExitFullscreenNotification object:player.moviePlayer];
+   
     
     
 }
 
--(void)enterFullScreen{
-
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarAnimationFade animated :YES];
-
-
-    
-}
--(void)exitFullScreen{
-    
-    
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated :YES];
-
-}
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
@@ -124,6 +92,21 @@
     
 }
 
+-(void)refreshPlayer{
+    [webVideo removeFromSuperview];
+    
+    webVideo = nil;
+    NSString *urlString = ([[AppDefaults appDefaults]remote])?REMOTE_HOST:LOCAL_HOST;
+    NSURL *videoUrl = [[NSURL alloc]initWithString:[urlString stringByAppendingString:VIDEO_STREAM_URL]];
+    NSString* html = [NSString stringWithFormat:@"<video src='%@' width=%d height=%d controls></video>", videoUrl, 320, 230];
+    webVideo = [[UIWebView alloc]initWithFrame:CGRectMake(-5, 0, self.view.frame.size.width, 230)];
+    //webVideo.frame = CGRectMake(-5, 0, self.view.frame.size.width, 230);
+    
+    
+    [self.view addSubview:webVideo];
+    [webVideo loadHTMLString:html baseURL:nil];
+}
+
 
 -(void)connection:(NSURLConnection*)connection didReceiveResponse:(NSURLResponse *)response{
     NSLog(@"npvc - recieved Response %@", response);
@@ -142,5 +125,8 @@
 
 - (IBAction)stopAction:(id)sender {
     [self stopStream];
+}
+- (IBAction)refreshAction:(id)sender {
+    [self refreshPlayer];
 }
 @end
