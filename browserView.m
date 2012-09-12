@@ -171,7 +171,7 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
     if(showdetailsId) {
-
+        selected = indexPath;
         
         UINavigationController *nc = (UINavigationController*)[self.tabBarController.viewControllers objectAtIndex:0];
         NowPlayingViewController *npvc = [nc.viewControllers objectAtIndex:0];
@@ -186,8 +186,8 @@
         //NSLog(@"%@",postString);
         //NSTimer *timeout = [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(goToNowPlaying) userInfo:nil repeats:NO];
         
-    }else{
-        selected = indexPath;
+
+        
     }
 }
 
@@ -259,7 +259,7 @@
 
 -(void)connection:(NSURLConnection*)connection didFailWithError:(NSError *)error{
     
-    //NSLog(@"There was an error : %@", error);
+    NSLog(@"There was an error : %@", error);
     
 }
 -(void)connection:(NSURLConnection*)connection didReceiveData:(NSData *)data{
@@ -271,7 +271,7 @@
     
 
     
-//     NSLog(@"%@", recievedData);
+    //NSLog(@"%@", recievedData);
     if(showdetailsId){
         
         [self fetchedEpisodes:recievedData];
@@ -315,12 +315,27 @@
 -(void)fetchedEpisodes:(NSData*)responseData{
     
     NSError *err;
+    NSString *responseString = [[NSString alloc]initWithData:responseData encoding:NSASCIIStringEncoding];
+    
+    
+
+
+//    const char *c = [responseString UTF8String];
+//    
+//    for (int i = 3210 ; i <= 3240 ; i++){
+//        printf("%c", c[i]);
+//    }
+//    printf("\n");
+
+    
     NSDictionary* jsonResponse = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&err];
+
+    
     if(err){
-        //NSLog(@"err : %@", err);
+        NSLog(@"err : %@", err);
     }
 
-    //NSLog(@"json - %@", jsonResponse);
+    NSLog(@"json - %@", jsonResponse);
     NSArray *episodeJson = [jsonResponse objectForKey:@"episodes"];
     
     for(NSDictionary *epDict in episodeJson){
