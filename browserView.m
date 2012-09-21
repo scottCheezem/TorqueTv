@@ -315,7 +315,7 @@
 -(void)fetchedEpisodes:(NSData*)responseData{
     
     NSError *err;
-    NSString *responseString = [[NSString alloc]initWithData:responseData encoding:NSASCIIStringEncoding];
+    
     
     
 
@@ -330,21 +330,29 @@
     
     NSDictionary* jsonResponse = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&err];
 
+
     
     if(err){
         NSLog(@"err : %@", err);
     }
 
-    NSLog(@"json - %@", jsonResponse);
+
     NSArray *episodeJson = [jsonResponse objectForKey:@"episodes"];
     
     for(NSDictionary *epDict in episodeJson){
+        
+        //NSLog(@"%@ - %@ - %@ - %@ - %@ \n\n", [epDict valueForKey:@"epTitle"], [epDict valueForKey:@"path"], [epDict valueForKey:@"epCode"], [epDict valueForKey:@"thumb"], [epDict valueForKey:@"plot"]);
+        
         Episode *episode = [[Episode alloc]init];
-        episode.epTitle = [epDict valueForKey:@"epTitle"];
-        episode.path = [epDict valueForKey:@"path"];
-        episode.epCode =[epDict valueForKey:@"epCode"];
-        episode.thumb = [epDict valueForKey:@"thumb"];
-        episode.plot = [epDict valueForKey:@"plot"];
+        episode.epTitle = ([epDict valueForKey:@"epTitle"] != (id)[NSNull null]) ? [epDict valueForKey:@"epTitle"] : @"";
+        episode.path = [epDict valueForKey:@"path"] ;
+        episode.epCode =([epDict valueForKey:@"epCode"] != (id)[NSNull null]) ? [epDict valueForKey:@"epCode"] : @"" ;
+        episode.thumb = ([epDict valueForKey:@"thumb"] != (id)[NSNull null]) ? [epDict valueForKey:@"thumb"] : @"";
+        episode.plot = ([epDict valueForKey:@"plot"] != (id)[NSNull null]) ? [epDict valueForKey:@"plot"] : @"";
+        
+        
+        
+        
         [shows addObject:episode];
     }
     [self.tableView reloadData];
