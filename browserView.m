@@ -108,6 +108,12 @@
         // Configure the cell...
         cell.textLabel.text = [[shows objectAtIndex:indexPath.row]epTitle];        
         cell.detailTextLabel.text = [[shows objectAtIndex:indexPath.row]epCode];
+        NSLog(@"%@", [[shows objectAtIndex:indexPath.row]watched]);
+        if([[[shows objectAtIndex:indexPath.row]watched]isEqualToString:@"true"]){
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        }else{
+            cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+        }
         return cell;
         
     }
@@ -349,7 +355,7 @@
         episode.epCode =([epDict valueForKey:@"epCode"] != (id)[NSNull null]) ? [epDict valueForKey:@"epCode"] : @"" ;
         episode.thumb = ([epDict valueForKey:@"thumb"] != (id)[NSNull null]) ? [epDict valueForKey:@"thumb"] : @"";
         episode.plot = ([epDict valueForKey:@"plot"] != (id)[NSNull null]) ? [epDict valueForKey:@"plot"] : @"";
-        
+        episode.watched = [epDict valueForKey:@"watched"];
         
         
         

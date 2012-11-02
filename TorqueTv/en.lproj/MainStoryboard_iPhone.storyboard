@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4">
     <dependencies>
-        <deployment defaultVersion="1296" identifier="iOS"/>
-        <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
     </dependencies>
     <scenes>
         <!--Browser View - Shows-->
         <scene sceneID="C0Y-zR-8a0">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Hyr-wm-D4S" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController title="Shows" id="aZ7-ub-2pF" customClass="browserView" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="tiA-rh-M5c">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
@@ -32,24 +30,24 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Shows" id="HTc-mP-HLc"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hyr-wm-D4S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1015" y="-3466"/>
         </scene>
         <!--Browser View-->
         <scene sceneID="Z7c-ML-v6K">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SXx-RV-ssS" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="OeT-oC-rh6" customClass="browserView" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="QB5-xc-hUg">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="epCell" textLabel="50H-O9-0Gm" detailTextLabel="BTK-dL-dtI" style="IBUITableViewCellStyleSubtitle" id="l3m-8T-5bd">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="epCell" textLabel="50H-O9-0Gm" detailTextLabel="BTK-dL-dtI" style="IBUITableViewCellStyleSubtitle" id="l3m-8T-5bd">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="50H-O9-0Gm">
@@ -81,13 +79,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="MOx-GB-dWW"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SXx-RV-ssS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1525" y="-3468"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="35y-Ev-iRb">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QNa-1P-xzX" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="1zt-dJ-Dho" customClass="DetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h7k-hr-3aO">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
@@ -120,13 +118,13 @@
                         <outlet property="thumbImage" destination="KHn-jN-Tgv" id="jCa-Xs-7rh"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QNa-1P-xzX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2054" y="-3468"/>
         </scene>
         <!--Navigation Controller - Browse-->
         <scene sceneID="H1h-5c-QnU">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cMV-Dc-t4O" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController definesPresentationContext="YES" id="g1I-xd-u1V" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Browse" id="gjn-zl-e1l"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="9bs-gA-jxG">
@@ -136,13 +134,13 @@
                         <segue destination="aZ7-ub-2pF" kind="relationship" relationship="rootViewController" id="kdB-3l-9Ap"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cMV-Dc-t4O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="401" y="-3466"/>
         </scene>
         <!--Now Playing View Controller - Second-->
         <scene sceneID="13">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="12" sceneMemberID="firstResponder"/>
                 <viewController title="Second" id="3" customClass="NowPlayingViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="17">
                         <rect key="frame" x="0.0" y="20" width="320" height="411"/>
@@ -187,13 +185,13 @@
                         <outlet property="stopButton" destination="JaM-NG-XD6" id="vEf-JE-piI"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="12" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="533" y="-2855"/>
         </scene>
         <!--Settings View Controller - Item-->
         <scene sceneID="5Pw-Fl-y9b">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KNU-2G-fLo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="BUs-ca-qdB" customClass="SettingsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ycr-Oo-iLv">
                         <rect key="frame" x="0.0" y="20" width="320" height="411"/>
@@ -241,13 +239,13 @@
                         <outlet property="remoteToggle" destination="1S6-Ct-kVJ" id="6ep-lT-WyN"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KNU-2G-fLo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="406" y="-2027"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="15">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>
                 <tabBarController id="4" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="5">
@@ -261,6 +259,7 @@
                         <segue destination="BUs-ca-qdB" kind="relationship" relationship="viewControllers" id="Qs9-bV-jcd"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-120" y="-3112"/>
         </scene>
@@ -281,7 +280,6 @@
             <relationships>
                 <relationship kind="action" name="refreshAction:"/>
                 <relationship kind="action" name="stopAction:"/>
-                <relationship kind="outlet" name="mpcontainer" candidateClass="UIView"/>
                 <relationship kind="outlet" name="refreshButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="stopButton" candidateClass="UIButton"/>
             </relationships>

@@ -14,5 +14,5 @@
 @property(nonatomic, retain)NSString* epCode;
 @property(nonatomic, retain)NSString* thumb;
 @property(nonatomic, retain)NSString* plot;
-
+@property(nonatomic, retain)NSString* watched;
 @end

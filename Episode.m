@@ -9,5 +9,5 @@
 #import "Episode.h"
 
 @implementation Episode
-@synthesize epTitle, path, epCode, thumb, plot;
+@synthesize epTitle, path, epCode, thumb, plot, watched;
 @end
