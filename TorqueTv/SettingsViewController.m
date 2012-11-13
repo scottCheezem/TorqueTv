@@ -29,7 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    qualityOptions = [NSArray arrayWithObjects:@"64", @"128", @"256", nil];
+    qualityOptions = [NSArray arrayWithObjects:@"64", @"128", @"256", @"512", @"1024", nil];
     
     self.remoteToggle.on = [[AppDefaults appDefaults]remote];
     self.qualitySeg.selectedSegmentIndex = [qualityOptions indexOfObject:[[AppDefaults appDefaults]br]];
